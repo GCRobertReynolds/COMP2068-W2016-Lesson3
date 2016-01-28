@@ -1,10 +1,12 @@
 /// <reference path="_reference.ts"/>
 var express = require('express');
+var path = require('path');
 var app = express();
 var port = process.env.port || 3000;
 //main route
 app.get('/', function (req, res) {
-    res.send('Hello Express!');
+    //res.send('Hello Express!');
+    res.sendFile(path.join(__dirname, "Public", "index.html"));
 });
 //route for info page
 app.get('/info', function (req, res) {
