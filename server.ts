@@ -15,18 +15,13 @@ app.get('/', function(req:express.Request, res:express.Response){
 
 //route for info page
 app.get('/info', function(req:express.Request, res:express.Response){
-    res.send('Your Custom Info Page goes here'); 
+    //res.send('Your Custom Info Page goes here');
+    res.sendFile(path.join(__dirname, "Public", "info.html")); 
 });
 
 app.listen(port, function(){
    console.log("App Server Started on port: " + port); 
 });
-
-
-
-
-
-
 
 
 
